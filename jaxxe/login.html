@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('assets/img/header-bg.jpg'); /* Ganti dengan path gambar Anda */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .login-container {
+            background: #d5d5d5e6; /* Warna semi-transparan */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+        }
+        .login-btn, .register-btn {
+            display: inline-block;
+            background-color: #636363;
+            color: rgb(255, 255, 255);
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .login-btn:hover, .register-btn:hover {
+            background-color: #636363;
+        }
+    </style>
+    <script>
+        function validateLoginForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            if (username.trim() === "" || password.trim() === "") {
+                alert("Semua kolom wajib diisi!");
+                return false;
+            }
+            window.location.href = "index.html";
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form onsubmit="return validateLoginForm()">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        <a href="registrasi.html" class="register-btn">Register</a>
+    </div>
+</body>
+</html>
